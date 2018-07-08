@@ -1,0 +1,26 @@
+.product-detail-card {
+    margin: 10px;
+    padding: 10px;
+}
+
+.product-title {
+    margin-bottom: 10px;
+}
+
+.product-detail {
+    padding: 10px 0px;
+}
+
+.description-text {
+    width: 100%;
+    overflow-wrap: break-word;
+    text-align: justify;
+
+}
+
+.error-msg {
+    font-size: 32px;
+    text-align: center;
+    color: grey;
+    margin-top: 4em;
+}

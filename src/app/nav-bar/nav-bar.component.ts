@@ -18,8 +18,8 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(["detail",cusip])
   }
 
-  public onRefreshBtnClick() {
-    console.log("on refresh clicked");
-  }
+  // public onRefreshBtnClick() {
+  //   console.log("on refresh clicked");
+  // }
 
 }

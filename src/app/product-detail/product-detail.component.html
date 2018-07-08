@@ -1,12 +1,24 @@
-<h2>A big fake name of a structured product that also happen to have maturity date on 22/09/2020</h2>
+<div *ngIf="!fetchError" class="product-detail-card">
+    <h2 class="product-title">A big fake name of a structured product that also happen to have a maturity date on {{minProdAttr.maturityDate | date:'shortDate'}}</h2>
+    <div class="product-detail">
+        CUSIP : <b>{{minProdAttr.cusip}}</b> <br>
+        Market Value : <b>{{minProdAttr.marketValue}}</b> <br>
+        Quantity : <b>{{minProdAttr.quantity}}</b> <br>
+        Maturity Date : <b>{{minProdAttr.maturityDate}}</b> <br>
+        Market View : <b>{{minProdAttr.marketView}}</b> <br>    
+    </div>
+    
+    <div class="product-description">
+      <h3> Description : </h3>
+      <p class="description-text"> 
+        {{minProdAttr.description}}
+      </p>
+    </div>
+    
+</div>
 
-CUSIP : <b>{{minProdAttr.cusip}}</b> <br>
-Market Value : <b>{{minProdAttr.marketValue}}</b> <br>
-Quantity : <b>{{minProdAttr.quantity}}</b> <br>
-Maturity Date : <b>{{minProdAttr.maturityDate}}</b> <br>
-Market View : <b>{{minProdAttr.marketView}}</b> <br>
+<div *ngIf="fetchError" class="error-msg">
 
-<p> Description : </p>
-<p> 
-  {{minProdAttr.description}}
-</p>
+  <b>{{cusip}}</b> doesn't exists :(
+
+</div>

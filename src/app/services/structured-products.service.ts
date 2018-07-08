@@ -17,7 +17,7 @@ export class StructuredProductsService {
   }
 
   public getProduct(cusip: string) {
-    return fetch(URLS.getProduct+cusip).then(res=>res.json());
+    return fetch(URLS.getProduct+cusip);
   }
 
 }
