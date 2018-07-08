@@ -8,6 +8,8 @@ import { ProductGridComponent } from './product-grid/product-grid.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { StructuredProductsService } from './services/structured-products.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -26,7 +28,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [StructuredProductsService],
   bootstrap: [AppComponent]
