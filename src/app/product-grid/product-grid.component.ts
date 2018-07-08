@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StructuredProductsService } from '../services/structured-products.service'
 
 @Component({
   selector: 'app-product-grid',
@@ -14,10 +15,10 @@ export class ProductGridComponent implements OnInit {
 
   public columnDefs: Array<object> = [{ headerName: 'CUSIP', field: 'cusip' }, { headerName: 'Offering Name', field: 'name' }, { headerName: 'Market Value', field: 'marketValue' }, { headerName: 'Quantity', field: 'quantity' }];
 
-  public rowData: Array<object> = [{},{}];
+  public rowData: Array<object>;
 
-  constructor(private router: Router) { 
-    
+  constructor(private router: Router, private spService: StructuredProductsService) { 
+    spService.fetchStructuredProducts().then(prods => this.rowData=prods);
   }
 
   ngOnInit() {

@@ -1,3 +1,5 @@
 .product-grid{
     clear: both;
+    height: 90%;
+    background: green;
 }
