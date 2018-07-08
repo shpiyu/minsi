@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductGridComponent } from './product-grid/product-grid.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { StructuredComponentsService } from './services/structured-components.service';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full"},
@@ -24,7 +25,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AgGridModule.withComponents([])
   ],
-  providers: [],
+  providers: [StructuredComponentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
