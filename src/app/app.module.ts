@@ -7,10 +7,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductGridComponent } from './product-grid/product-grid.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { StructuredProductsService } from './services/structured-products.service';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 const appRoutes: Routes = [
-  { path: "", redirectTo: "home", pathMatch: "full"},
-  { path: "home", component: HomeComponent }
+  { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: "home", component: HomeComponent },
+  { path: "detail/:cusip", component: ProductDetailComponent }
 ];
 
 @NgModule({
@@ -18,7 +20,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    ProductGridComponent
+    ProductGridComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
