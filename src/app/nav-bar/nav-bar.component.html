@@ -1,3 +1,13 @@
-<p>
-  nav-bar works!
-</p>
+<div class="nav-bar">
+  <h1>Min SI</h1>
+  
+  
+
+  <div class="search">
+    <span class="icon" (click)="onSearch(searchBox.value)"><i class="material-icons">search</i></span>
+    <input #searchBox type="text" (keyup.enter)="onSearch(searchBox.value)">
+  </div>
+  
+  <span class="nav-icon" style="margin-top: 6px" (click)="onRefresh()"><i class="material-icons">refresh</i></span>
+  
+</div>
