@@ -15,7 +15,7 @@ export class NavBarComponent implements OnInit {
   }
 
   public onSearch(cusip:string) {
-    this.router.navigateByUrl("detail")
+    this.router.navigate(["detail",cusip])
   }
 
   public onRefreshBtnClick() {
