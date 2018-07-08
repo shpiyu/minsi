@@ -1,0 +1,12 @@
+<div class="product-grid">
+    <ag-grid-angular 
+    style="width: 100%; height: 400px;" 
+    class="ag-theme-material"
+    [rowData]="rowData" 
+    [columnDefs]="columnDefs"
+    [rowSelection]="rowSelection"
+    (selectionChanged) = "onSelectionChanged($event)"
+    (gridReady)="onGridReady($event)"
+    >
+</ag-grid-angular>
+</div>
